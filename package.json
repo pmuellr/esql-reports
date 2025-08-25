@@ -1,0 +1,28 @@
+{
+  "name": "esql-reports",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "ES|QL Dashboards with Vega-Lite and Typst",
+  "license": "MIT",
+  "author": "Patrick Mueller <pmuellr@apache.org> (https://github.com/pmuellr)",
+  "homepage": "https://github.com/pmuellr/esql-reports",
+  "bin": {
+    "esql-reports": "esql-reports.js"
+  },
+  "scripts": {
+    "start": "node --use-system-ca ./esql-reports.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pmuellr/esql-reports.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pmuellr/esql-reports/issues"
+  },
+  "dependencies": {
+    "meow": "^13.2.0",
+    "vega-lite": "^6.2.0"
+  }
+}

@@ -1,0 +1,5 @@
+node_modules
+tmp
+
+samples/**/*.pdf
+samples/**/*.svg
