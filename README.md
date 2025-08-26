@@ -27,7 +27,12 @@ a `.svg` file using the data from the ES|QL queries.  Finally, `typst`
 will be run on the Typst document to generate a `.pdf` file.
 
 Examples are available in the [`samples`](https://github.com/pmuellr/esql-reports/tree/main/samples/)
-directory.
+directory.  The first page of the `event-log` sample will render as below.
+
+I obviously have a lot to learn about Typst, and need to figure out how
+to consistently scale visualizations within the page :-)
+
+![sample pdf page](samples/event-log/event-log-pdf.png)
 
 
 install

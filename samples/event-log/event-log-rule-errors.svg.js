@@ -15,12 +15,12 @@ const EsqlEventLog = `
 
   | RENAME rule.category  AS type
   | RENAME @timestamp     AS date
-  | RENAME event.duration AS duration
+  | EVAL   duration = event.duration / 1000000000.0
 
   | KEEP date, type, duration
 
   | SORT date desc
-  | LIMIT 10000
+  | LIMIT 5000
 `.trim()
 
 /** @type { () => Promise<EsqlQuery> }} */
@@ -29,11 +29,6 @@ export async function getEsql() { return { eventLog: EsqlEventLog } }
 
 /** @type { (esql: EsqlResult) => Promise<VegaLiteSpec> } */
 export async function getVegaLiteSpec(esql) {
-  // tried to fix this in ES|QL, but oddly couldn't get it
-  for (const row of esql.eventLog) {
-    row.duration /= NanosInASecond
-  }
-
   return {
     $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
     title: 'Rule execution failures by type',
